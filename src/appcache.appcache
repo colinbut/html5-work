@@ -1,0 +1,10 @@
+CACHE MANIFEST
+images/*
+audios/*
+videos/*
+
+# NETWORK:
+# *
+
+# FALLBACK:
+# offline.html

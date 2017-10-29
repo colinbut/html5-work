@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html manifest="appcache.appcache"> <!-- enabling HTML5 App Cache -->
+<head>
+	<title>HTML5 Demo</title>
+	<meta name="description" content="This is a HTML5 Demo site">
+	<meta name="keywords" content="HTML5">
+	<meta name="author" content="Colin But">
+	<link rel="stylesheet" type="text/css" href="css/style.css"> <!-- CSS -->
+	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+</head>
+<body onLoad="getLocation()">
+	<div id="semantics">
+		<header>This is a header</header>
+		<section id="intro">
+			<article>This Demo project shows off the new HTML5 features</article>
+		</section>
+		<aside>
+			[Extra information goes here]
+		</aside>
+		<nav>
+			<ul>
+				<li><a href="#">Multimedia</a></li>
+				<li><a href="#">Geolocation</a></li>
+				<li><a href="#">DragNDrop</a></li>
+				<li><a href="#">Web Storage</a></li>
+				<li><a href="#">App Cache</a></li>
+				<li><a href="#">Web Workers</a></li>
+				<li><a href="#">SSE</a></li>
+				<li><a href="#">2D Graphics - Canvas</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div id="audio">
+		<audio width="100" height="50" controls>
+			<source src="audios/" type="audio/mp3">
+			Your browser does not support HTML5 Audio tag
+		</audio>
+	</div>
+	<div id="video">
+		<video width="350" height="250" controls>
+			<source src="videos/" type="video/mp4">
+			Your browser does not support HTML5 Video tag
+		</video>
+	</div>
+	<div id="geolocation">
+		<p id="geolocation-display"></p>
+		<div id="geolocation-display-map"></div>
+		<div id="geolocation-display-map-interactive"></div>
+	</div>
+	<div id="dragndrop">
+		<div id="drop1" style="border:1px dashed red;width:200px;height:150px;" onDrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<br />
+		<div id="drop2" style="border:1px dashed red;width:200px;height:150px;" onDrop="drop(event)" ondragover="allowDrop(event)">
+			<img id="drag" src="images/dragImage.png" draggable="true" ondragstart="drag(event)" width="185" height="141" style="cursor:pointer;">
+		</div>
+		
+	</div>
+	<div id="web-storage">
+		<div id="localStorage">
+			<h3>Local Storage</h3>
+			<p>Local Storage does not have expiration date</p>
+			<div>My last name is:<span id="result"></span> </div>
+		</div>
+		<div id="sessionStorage">
+			<h3>Session Storage</h3>
+			<p>Similar to Local Storage however it only stores data for one session only</p>
+			<div>
+				<button onclick="clickCounter()" type="button">Click me!</button><br />
+				<p>You clicked the button <span id="sessionStorageResult"></span> time(s)</p>
+				<p>Click the above button to see the click count increase</p>
+				<p>If you close the browser window or tab, and try again, the click count is reset</p>
+			</div>
+		</div>
+	</div>
+	
+	<div id="app-cache">
+		<h1>App Cache</h1>
+		<p>Steps:</p>
+		<ol>
+			<li>Load this page while online</li>
+			<li>Go offline</li>
+			<li>try reloading this page - it should still work</li>
+		</ol>
+		<p>on Chome hit F12 key and browse to resources tab to check app cache contents</p>
+	</div>
+	<div id="web-workers">
+		<p>We are now counting numbers:<output id="web-worker-result"></output> </p>
+		<button onclick="startWorker()">Start</button>
+		<button onclick="stopWorker()">Stop</button>
+	</div>
+	<div id="canvas">
+
+	</div>
+	<div id="html5-forms">
+
+	</div>
+	<div id="useful-links">
+
+	</div>
+	<footer>&copy; Copyright Colin But. All rights reserved 2014.</footer>
+	
+	<!-- Placing at the end of file when the DOM is ready -->
+	<script type="text/javascript" src="js/geolocation.js"></script>
+	<script type="text/javascript" src="js/webstorage.js"></script>
+	<script type="text/javascript" src="js/webworkers.js"></script>
+	<script type="text/javascript" src="js/dragndrop.js"></script>
+	
+</body>
+</html>
